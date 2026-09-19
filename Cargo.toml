@@ -1,0 +1,25 @@
+[package]
+name = "procrun"
+version = "0.1.0"
+edition = "2021"
+description = "Runs a Procfile — foreman/overmind for people who don't want Ruby or tmux — with colored, name-prefixed output and real signal forwarding to every child"
+license = "MIT"
+authors = ["Animesh Raj <animesh080808@gmail.com>"]
+repository = "https://github.com/itsarraj/procrun"
+readme = "README.md"
+keywords = ["procfile", "process-manager", "foreman", "cli", "dev-tools"]
+categories = ["command-line-utilities", "development-tools"]
+
+[lib]
+name = "procrun"
+path = "src/lib.rs"
+
+[[bin]]
+name = "procrun"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+nix = { version = "0.29", features = ["signal", "process"] }
+signal-hook = "0.3"
