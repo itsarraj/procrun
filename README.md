@@ -8,6 +8,12 @@ prefix; if any process exits, every other process is sent a real
 SIGTERM (escalating to SIGKILL for stragglers); Ctrl-C or `docker
 stop` on `procrun` itself does the same to every child.
 
+## Installation
+
+```sh
+cargo install --path .
+```
+
 ## Usage
 
 ```bash
